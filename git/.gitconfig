@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = aljaz.medic@gmail.com
+	name = aljazmedic
+[commit]
+	gpgsign = true
