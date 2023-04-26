@@ -42,6 +42,7 @@ plugins=(
     git
     gitfast
     docker
+    docker-compose
     tmux
     history-substring-search
     zsh-completions
