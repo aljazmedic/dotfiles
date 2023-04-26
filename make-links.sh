@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
@@ -6,8 +6,7 @@ DOT_FOLDERS="tmux,git,zsh"
 
 for folder in $(echo $DOT_FOLDERS | sed "s/,/ /g"); do
     echo "[+] Folder :: $folder"
-    stow --ignore=README.md --ignore=LICENSE \
-        -t $HOME -D $folder
+    stow --ignore=README.md --ignore=LICENSE  -t $HOME -D $folder
     stow -v -t $HOME $folder
 done
 
