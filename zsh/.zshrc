@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
+# Mandatory for GPGs with passwords
 export GPG_TTY=$(tty)
+
 if [[ -z "$XDG_CONFIG_HOME" ]]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
@@ -8,8 +10,8 @@ if [[ -d "$XDG_CONFIG_HOME/zsh" ]]; then
     export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 fi
 
-if [[ -d "$XDG_CONFIG_HOME/oh-my-zsh" ]]; then
-    export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+if [[ -d "$ZDOTDIR/oh-my-zsh" ]]; then
+    export ZSH="$ZDOTDIR/oh-my-zsh"
 fi
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
