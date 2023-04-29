@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export GPG_TTY=$(tty)
 if [[ -z "$XDG_CONFIG_HOME" ]]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
@@ -13,7 +12,9 @@ if [[ -d "$XDG_CONFIG_HOME/oh-my-zsh" ]]; then
     export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 fi
 
-ZSH_CUSTOM=$ZDOTDIR/custom
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export ZSH_CUSTOM=$ZDOTDIR/custom
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
