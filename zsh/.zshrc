@@ -19,7 +19,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH_CUSTOM=$ZDOTDIR/custom
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -47,7 +47,9 @@ plugins=(
     docker
     docker-compose
     tmux
+    emoji
     history-substring-search
+    #spaceship-vi-mode
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting

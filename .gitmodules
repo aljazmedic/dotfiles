@@ -10,3 +10,7 @@
 [submodule "zsh/.config/zsh/custom/plugins/zsh-autosuggestions"]
 	path = zsh/.config/zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/.config/zsh/custom/themes/spaceship-prompt"]
+	path = zsh/.config/zsh/custom/themes/spaceship-prompt
+	url = https://github.com/spaceship-prompt/spaceship-prompt.git
+	shallow = true
