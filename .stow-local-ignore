@@ -1,0 +1,10 @@
+#Gitfiles
+\.git
+\.gitignore
+\.gitmodules
+
+#Dotfile helpers
+dotbot
+install\.conf\.yaml
+install
+make-links\.sh

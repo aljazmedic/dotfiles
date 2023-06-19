@@ -1,7 +1,9 @@
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [user]
-	email = aljaz.medic@gmail.com
-	name = Aljaž Medič
-[commit]
-	gpgsign = true
+    email = 35614267+aljazmedic@users.noreply.github.com	
+    name = Aljaž Medič
+[hist]
+    hist = log --pretty=format:'%C(yellow)%h%Creset%C(auto)%d - %s %Cblue[%an]' --graph --date=short --decorate --branches --remotes --tags
+[include]
+    path = ~/.gitconfig.local
