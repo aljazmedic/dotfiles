@@ -11,3 +11,6 @@
 	path = zsh/.config/zsh/custom/themes/spaceship-prompt
 	url = https://github.com/spaceship-prompt/spaceship-prompt.git
 	shallow = true
+[submodule "zsh/.config/zsh/.config/oh-my-zsh"]
+	path = zsh/.config/zsh/.config/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
