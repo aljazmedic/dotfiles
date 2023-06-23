@@ -1,18 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-# Mandatory for GPGs with passwords
+# For GPG commit signing
 export GPG_TTY=$(tty)
 
-if [[ -z "$XDG_CONFIG_HOME" ]]; then
-    export XDG_CONFIG_HOME="$HOME/.config"
-fi
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
 
-if [[ -d "$XDG_CONFIG_HOME/zsh" ]]; then
-    export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-fi
+mkdir -p "$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-if [[ -d "$ZDOTDIR/oh-my-zsh" ]]; then
-    export ZSH="$ZDOTDIR/oh-my-zsh"
-fi
+mkdir -p "$XDG_CONFIG_HOME/oh-my-zsh"
+export ZSH="$ZDOTDIR/oh-my-zsh"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
