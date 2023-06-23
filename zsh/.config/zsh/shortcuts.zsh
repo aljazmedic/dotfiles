@@ -8,12 +8,12 @@ alias c='cd'
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 
-# EDITOR
+# Why vim use when you can nvim use
 if [ -x "$(command -v nvim)" ]; then
 	alias vim="nvim"
-	alias svim="sudo -E nvim"
 fi
 
+alias svim="sudo -E vim"
 
 # confirm before overwriting something
 #alias cp="cp -i"
