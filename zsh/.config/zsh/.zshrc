@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
+<<<<<<< HEAD:zsh/.zshrc
 # For GPG commit signing
+=======
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+>>>>>>> 1ad88a8 (Zsh set only .zprofile):zsh/.config/zsh/.zshrc
 export GPG_TTY=$(tty)
 
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
@@ -51,6 +55,19 @@ plugins=(
     zsh-syntax-highlighting
     colored-man-pages
 )
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
 
 [ -f "$ZDOTDIR/exports.zsh" ] && source $ZDOTDIR/exports.zsh
 [ -f "$ZDOTDIR/configs.zsh" ] && source $ZDOTDIR/configs.zsh
