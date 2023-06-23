@@ -3,7 +3,7 @@
 [user]
     email = 35614267+aljazmedic@users.noreply.github.com	
     name = Aljaž Medič
-[hist]
+[alias]
     hist = log --pretty=format:'%C(yellow)%h%Creset%C(auto)%d - %s %Cblue[%an]' --graph --date=short --decorate --branches --remotes --tags
 [include]
     path = ~/.gitconfig.local
