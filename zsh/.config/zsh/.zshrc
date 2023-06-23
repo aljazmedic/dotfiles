@@ -1,19 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export GPG_TTY=$(tty)
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
 
-mkdir -p "$XDG_CONFIG_HOME/zsh"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
-mkdir -p "$XDG_CONFIG_HOME/oh-my-zsh"
-export ZSH="$ZDOTDIR/oh-my-zsh"
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-export ZSH_CUSTOM=$ZDOTDIR/custom
-
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship-prompt/spaceship"
+#ZSH_THEME="spaceship-prompt/spaceship"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,22 +40,9 @@ plugins=(
     colored-man-pages
 )
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
-
-
-[ -f "$ZDOTDIR/exports.zsh" ] && source $ZDOTDIR/exports.zsh
+# TODO! Move configs.zsh to this file
 [ -f "$ZDOTDIR/configs.zsh" ] && source $ZDOTDIR/configs.zsh
-[ -f "$ZDOTDIR/aliases.zsh" ] && source $ZDOTDIR/aliases.zsh
+[ -f "$ZDOTDIR/shortcuts.zsh" ] && source "$ZDOTDIR/shortcuts.zsh"
 
 source $ZSH/oh-my-zsh.sh
 

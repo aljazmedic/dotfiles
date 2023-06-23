@@ -1,6 +1,28 @@
-export EDITOR="nvim"
+
+
+# Zsh vars
 export ZDOTDIR="$HOME/.config/zsh"
+export ZSH="$ZDOTDIR/oh-my-zsh" 
+export ZSH_CUSTOM="$ZDOTDIR/custom"
+export ZSH_THEME="robbyrussell"
+export DIRSTACKSIZE=5
+
+# Gpg sometimes funny
+export GPG_TTY=$(tty)
+
+# System
+if command -v nvim >/dev/null; then
+	export VISUAL="nvim"
+
+	export MANPAGER='nvim +Man!'
+else
+	export VISUAL="vim"
+fi
+export EDITOR="nvim"
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+
+# Man
+export MANWIDTH=999
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
