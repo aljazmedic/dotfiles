@@ -1,11 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-<<<<<<< HEAD:zsh/.zshrc
-# For GPG commit signing
-=======
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
->>>>>>> 1ad88a8 (Zsh set only .zprofile):zsh/.config/zsh/.zshrc
 export GPG_TTY=$(tty)
-
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
 
 mkdir -p "$XDG_CONFIG_HOME/zsh"
