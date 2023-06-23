@@ -1,3 +1,5 @@
+[core]
+    logallrefupdates = true
 [init]
     defaultBranch = main
 [user]
