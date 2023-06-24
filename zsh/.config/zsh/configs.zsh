@@ -1,4 +1,12 @@
 # zsh options
+
+#if [ -d $XDG_CONFIG_HOME/lf ] ; then
+#	fpath=($XDG_CONFIG_HOME/lf/_lf $fpath)
+#fi
+
+# completions
+autoload -Uz compinit
+compinit
 setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
 setopt autocd extendedglob nomatch menucomplete
 setopt appendhistory
@@ -8,13 +16,13 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
-# completions
-autoload -Uz compinit
+setopt globdots
 zstyle ':completion:*' menu select
+#zstyle ':completion:*' special-dirs true
 
 zmodload zsh/complist
 # compinit
-_comp_options+=(globdots)		# Include hidden files.
+#_comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v

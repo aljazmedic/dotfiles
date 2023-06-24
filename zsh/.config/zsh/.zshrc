@@ -26,23 +26,22 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    gitfast
-    docker
-    docker-compose
-    tmux
-    emoji
-    history-substring-search
-    #spaceship-vi-mode
-    zsh-completions
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    colored-man-pages
-)
-
+		git
+		gitfast
+		docker
+		docker-compose
+		tmux
+		emoji
+		history-substring-search
+#spaceship-vi-mode
+		zsh-completions
+		zsh-autosuggestions
+		zsh-syntax-highlighting
+		colored-man-pages
+	)
 # TODO! Move configs.zsh to this file
 [ -f "$ZDOTDIR/configs.zsh" ] && source $ZDOTDIR/configs.zsh
 [ -f "$ZDOTDIR/shortcuts.zsh" ] && source "$ZDOTDIR/shortcuts.zsh"
 
-source $ZSH/oh-my-zsh.sh
+	source $ZSH/oh-my-zsh.sh
 

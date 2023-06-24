@@ -42,3 +42,12 @@ lfcd () {
 bindkey -s '^o' 'lfcd\n' 
 
 
+nmap-bstrap () {
+	performance="-T4 --min-rate 300"
+	_c="nmap -p- $performance -oN nmap.initial $1"
+	echo "$_c"
+	eval $_c && PORTS=$(grep -oP '\d+(?=/tcp)' initial | paste -sd ',')
+	_c2="nmap -sC -sV $performance -oA nmap.all $1 -p$PORTS"
+	echo "$_c2"
+	eval $_c2
+}
