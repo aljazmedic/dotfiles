@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FOLDERS="tmux git zsh"
+DOT_FOLDERS="tmux git zsh pwninit"
 
 for folder in $DOT_FOLDERS; do
     echo "[+] Folder :: $folder"
