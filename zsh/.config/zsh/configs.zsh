@@ -10,7 +10,6 @@ compinit
 setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
 setopt autocd extendedglob nomatch menucomplete
 setopt appendhistory
-stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
 # beeping is annoying
