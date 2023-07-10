@@ -1,10 +1,10 @@
 #!/bin/sh
 
-DOT_FOLDERS="tmux git zsh pwninit"
+DOT_FOLDERS="tmux git zsh pwninit fonts"
 
 for folder in $DOT_FOLDERS; do
     echo "[+] Folder :: $folder"
-    stow -t $HOME $folder 
+    stow -t $HOME -d ./stow/ $folder -v -R
 done
 
 # Reload shell once installed
