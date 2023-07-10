@@ -10,9 +10,9 @@
 #     compinit
 #
 
-local arguments
+local -a args
 
-arguments=(
+args=(
     '-command[command to execute on client initialization]'
     '-config[path to the config file (instead of the usual paths)]'
     '-cpuprofile[path to the file to write the CPU profile]'
@@ -29,4 +29,4 @@ arguments=(
     '*:filename:_files'
 )
 
-_arguments -s $arguments
+_arguments -s $args

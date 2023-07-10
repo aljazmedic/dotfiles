@@ -12,6 +12,8 @@ setopt autocd extendedglob nomatch menucomplete
 setopt appendhistory
 zle_highlight=('paste:none')
 
+fpath+=~/.config/zcomp
+
 # beeping is annoying
 unsetopt BEEP
 
