@@ -13,7 +13,8 @@ if [ -x "$(command -v nvim)" ]; then
 	alias vim="nvim"
 fi
 
-alias svim="sudo -E vim"
+export SEDITOR="sudo -E $EDITOR"
+alias svim="sudo -E $EDITOR"
 
 # confirm before overwriting something
 #alias cp="cp -i"

@@ -1,0 +1,9 @@
+
+# Custom completions from other sources
+
+fpath+=~/.config/zcomp
+
+#zstyle ':completion:*' use-cache on
+#zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/.zcompcache"
+
+zstyle ':completion:*' menu select

@@ -13,3 +13,4 @@ plugins=(... gitfast)
 An earlier version of the plugin also loaded the git plugin. If you want to keep those
 aliases enable the [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
 as well.
+    

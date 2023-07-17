@@ -1,34 +1,21 @@
 # zsh options
 
-#if [ -d $XDG_CONFIG_HOME/lf ] ; then
-#	fpath=($XDG_CONFIG_HOME/lf/_lf $fpath)
-#fi
-
-# completions
-autoload -Uz compinit
-compinit
-setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
-setopt autocd extendedglob nomatch menucomplete
-setopt appendhistory
 zle_highlight=('paste:none')
-
-fpath+=~/.config/zcomp
 
 # beeping is annoying
 unsetopt BEEP
 
-setopt globdots
-zstyle ':completion:*' menu select
+_comp_options+=(globdots) # Include hidden files.
 #zstyle ':completion:*' special-dirs true
 
 zmodload zsh/complist
-# compinit
-#_comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
+### VI KEYMAP ###
 
-### PROMPT ###
-autoload -Uz vcs_info
+# bindkey -v
+# export KEYTIMEOUT=1
+
+# # Change cursor
+# source "$ZDOTDIR/cursor_mode"
+
 autoload -U colors && colors
