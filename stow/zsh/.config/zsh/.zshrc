@@ -1,20 +1,18 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# If you come from bash you might have to change your $PATH.
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
+# echo "Loaded .config/zsh/.zshrc"
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+_source_if_exists_f () {
+	[[ -r $1 ]] && source $1
+}
+## NO USER IO BEYOND THIS LINE ##
+
+_source_if_exists_f "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#																			| This is equal to $NAME ?
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="spaceship-prompt/spaceship"
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -34,26 +32,21 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-		git
-		gitfast
-		docker
-		docker-compose
-		tmux
-		emoji
-		history-substring-search
 		zsh-completions
 		zsh-autosuggestions
 		zsh-syntax-highlighting
 		colored-man-pages
 	)
-# TODO! Move configs.zsh to this file
-[ -f "$ZDOTDIR/configs.zsh" ] && source $ZDOTDIR/configs.zsh
-[ -f "$ZDOTDIR/shortcuts.zsh" ] && source "$ZDOTDIR/shortcuts.zsh"
 
+# rc files may add to plugins
+rcdir="$HOME/.config/zsh/rc.d"
+[ -d "$rcdir" ] && for rc in "$rcdir"/*.zsh; do
+	source "$rc"
+	# echo "Loaded $rc"
+done
+
+plugins=($(printf "%s\n" "${plugins[@]}" | sort -u | uniq))
 source $ZSH/oh-my-zsh.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 _zlf() {
         emulate -L zsh
@@ -83,3 +76,5 @@ _zlf_handler() {
     zle -R
 }
 zle -N _zlf_handler
+
+_source_if_exists_f $ZDOTDIR/.p10k.zsh

@@ -1,11 +1,14 @@
+# echo "Loaded .config/zsh/.zprofile"
 
+# This is sourced on tmux new pane for example
 
 # Zsh vars
-export ZDOTDIR="$HOME/.config/zsh"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$XDG_CONFIG_HOME/cache}"
+export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 export ZSH="$ZDOTDIR/oh-my-zsh" 
 export ZSH_CUSTOM="$ZDOTDIR/custom"
-export ZSH_THEME="robbyrussell"
-export DIRSTACKSIZE=5
+export DIRSTACKSIZE=8
 
 # Gpg sometimes funny
 export GPG_TTY=$(tty)
@@ -18,7 +21,7 @@ if command -v nvim >/dev/null; then
 else
 	export VISUAL="vim"
 fi
-export EDITOR="nvim"
+export EDITOR="$VISUAL"
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 
 # Man

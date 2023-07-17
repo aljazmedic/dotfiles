@@ -12,8 +12,7 @@ setopt autocd extendedglob nomatch menucomplete
 setopt appendhistory
 zle_highlight=('paste:none')
 
-fpath+=~/.config/zcomp
-
+fpath=(~/.config/zsh/comp.d ~/.config/zsh/rc.d $fpath)
 # beeping is annoying
 unsetopt BEEP
 
