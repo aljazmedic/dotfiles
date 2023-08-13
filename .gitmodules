@@ -14,3 +14,6 @@ url = https://github.com/ohmyzsh/ohmyzsh.git
 path = stow/zsh/.config/zsh/custom/themes/powerlevel10k
 url = https://github.com/romkatv/powerlevel10k.git
 shallow = true
+[submodule "stow/nvm/.config/nvm"]
+	path = stow/nvm/.config/nvm
+	url = https://github.com/nvm-sh/nvm.git
