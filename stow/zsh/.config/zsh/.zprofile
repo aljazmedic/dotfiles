@@ -9,6 +9,7 @@ export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 export ZSH="$ZDOTDIR/oh-my-zsh" 
 export ZSH_CUSTOM="$ZDOTDIR/custom"
 export DIRSTACKSIZE=8
+export HISTFILE="$ZDOTDIR/.zsh_history"
 
 # Gpg sometimes funny
 export GPG_TTY=$(tty)
