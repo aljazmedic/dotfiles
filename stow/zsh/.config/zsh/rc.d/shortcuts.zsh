@@ -40,7 +40,7 @@ lfcd() {
 }
 bindkey -s '^o' 'lfcd\n'
 
-nmap-bstrap() {
+nmap-aio() {
     performance="-T4 --min-rate 300"
     mkdir -p nmap
     _c="nmap -p- $performance -oN nmap/initial $1 --reason"
