@@ -1,19 +1,22 @@
 [submodule "stow/zsh/.config/zsh/custom/plugins/zsh-syntax-highlighting"]
-path = stow/zsh/.config/zsh/custom/plugins/zsh-syntax-highlighting
-url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+    path = stow/zsh/.config/zsh/custom/plugins/zsh-syntax-highlighting
+    url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "stow/zsh/.config/zsh/custom/plugins/zsh-completions"]
-path = stow/zsh/.config/zsh/custom/plugins/zsh-completions
-url = https://github.com/zsh-users/zsh-completions
+    path = stow/zsh/.config/zsh/custom/plugins/zsh-completions
+    url = https://github.com/zsh-users/zsh-completions
 [submodule "stow/zsh/.config/zsh/custom/plugins/zsh-autosuggestions"]
-path = stow/zsh/.config/zsh/custom/plugins/zsh-autosuggestions
-url = https://github.com/zsh-users/zsh-autosuggestions
+    path = stow/zsh/.config/zsh/custom/plugins/zsh-autosuggestions
+    url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "stow/zsh/.config/zsh/oh-my-zsh"]
-path = stow/zsh/.config/zsh/oh-my-zsh
-url = https://github.com/ohmyzsh/ohmyzsh.git
+    path = stow/zsh/.config/zsh/oh-my-zsh
+    url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "stow/zsh/.config/zsh/custom/themes/powerlevel10k"]
-path = stow/zsh/.config/zsh/custom/themes/powerlevel10k
-url = https://github.com/romkatv/powerlevel10k.git
-shallow = true
+    path = stow/zsh/.config/zsh/custom/themes/powerlevel10k
+    url = https://github.com/romkatv/powerlevel10k.git
+    shallow = true
+[submodule "stow/ruby/.config/rbenv"]
+    path = stow/ruby/.config/rbenv
+    url = https://github.com/rbenv/rbenv.git
 [submodule "stow/nvm/.config/nvm"]
-	path = stow/nvm/.config/nvm
-	url = https://github.com/nvm-sh/nvm.git
+    path = stow/nvm/.config/nvm
+    url = https://github.com/nvm-sh/nvm.git

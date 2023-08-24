@@ -1,4 +1,8 @@
-# echo "Loaded .config/zsh/.zshrc"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# If you come from bash you might have to change your $PATH.
+>>>>>>> ruby
 
 _source_if_exists_f () {
 	[[ -r $1 ]] && source $1
@@ -78,3 +82,4 @@ _zlf_handler() {
 zle -N _zlf_handler
 
 _source_if_exists_f $ZDOTDIR/.p10k.zsh
+eval "$(rbenv init -)"

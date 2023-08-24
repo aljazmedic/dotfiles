@@ -1,0 +1,11 @@
+---
+- name: "Create ~/.config dir"
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+    mode: 0700
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+   
+- include: "configure-zsh"
+- include: "configure-tmux"
