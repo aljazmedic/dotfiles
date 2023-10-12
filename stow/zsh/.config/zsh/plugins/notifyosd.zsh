@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # commands to ignore
-cmdignore=(htop tmux top vim nvim testomatic pgcli bat mux tmuxp gc)
+cmdignore=(htop tmux top vim nvim testomatic pgcli bat mux tmuxp gc lf)
 
 # set gt 0 to enable GNU units for time results
 gnuunits=0

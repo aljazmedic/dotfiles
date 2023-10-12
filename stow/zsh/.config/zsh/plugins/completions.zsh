@@ -7,7 +7,7 @@
 
 
 # Load more completions
-#fpath=($DOTFILES/zsh/plugins/zsh-completions/src $fpath)
+fpath=($ZDOTDIR/comp.d/ $fpath)
 
 setopt menu_complete # show menu on tab completion
 
