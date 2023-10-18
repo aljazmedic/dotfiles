@@ -1,0 +1,7 @@
+# Gitfiles
+.git
+.gitignore
+.gitattributes
+
+# Makefiles
+install\.mk

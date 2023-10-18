@@ -1,0 +1,2 @@
+.config/git/*
+!.config/git/config
