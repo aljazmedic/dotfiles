@@ -10,5 +10,5 @@ Install.md
 
 - Adding:
     - [x] z
-    - [ ] tmuxp
+    - [x] tmuxp
     - [ ] fzf
