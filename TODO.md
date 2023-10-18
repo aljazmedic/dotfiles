@@ -9,6 +9,6 @@ Install.md
     - [ ] Install the sounds for
 
 - Adding:
-    - [ ] z
+    - [x] z
     - [ ] tmuxp
     - [ ] fzf

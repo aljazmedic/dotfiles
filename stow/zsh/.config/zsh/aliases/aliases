@@ -56,6 +56,19 @@ alias dot="$HOME/.dotfiles"
 # zstyle ':completion:alias-expension:*' completer _expand_alias
 
 
+# Quick edit
+
+_etc_files=(
+    hosts
+    resolv.conf
+)
+for _file in $_etc_files; do
+    alias $_file="sudo -E $EDITOR /etc/$_file"
+done
+unset _etc_files _file
+
+
+
 ### FUNCTIONS ###
 
 ssha() {

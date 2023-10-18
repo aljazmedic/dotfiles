@@ -19,6 +19,7 @@ plugins=(
 		zsh-autosuggestions
 		zsh-syntax-highlighting
 		colored-man-pages
+		z
 	)
 
 # rc files may add to plugins

@@ -49,15 +49,3 @@ export GOPATH="$WORKSPACE/go"
 export GOBIN="$WORKSPACE/go/bin"
 export GOCACHE="$XDG_CACHE_HOME/go-build"
 
-
-# PATH
-export PATH="$GOBIN:/usr/local/go/bin:$PATH"  #GO
-
-if [ -d "$HOME/bin" ] ; then
-	export PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
