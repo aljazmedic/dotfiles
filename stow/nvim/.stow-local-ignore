@@ -1,0 +1,7 @@
+#Gitfiles
+\.git
+\.gitignore
+\.gitmodules
+\.gitattributes
+
+install\.mk
