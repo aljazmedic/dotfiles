@@ -3,19 +3,25 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Lazy window
+keymap.set("n", "<leader>l", "<cmd>Lazy<CR>")
+
 
 -- Make x not replace the buffer
 keymap.set("n", "x", '"_x')
 
 -- Tabs
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tc", ":tabclose<CR>") -- close tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") -- prev tab
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>") -- close tab
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>") -- next tab
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>") -- prev tab
 
 -- In visual move lines with J/K
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", "<cmd>m '>+1<CR>gv=gv")
+keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv")
+
+-- Non-returnable from VS Code
+keymap.set({"n", "i"}, "<C-s>", "<cmd>w<CR>")
 
 -- Weird Primagen stuff
 keymap.set("n", "J", "mzJ`z")
