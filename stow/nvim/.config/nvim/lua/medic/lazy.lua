@@ -38,6 +38,7 @@ local plugins = {
 
 require("lazy").setup({
 		{ import = "medic.plugins" },
+		{ import = "medic.plugins.lsp" },
 	},
 	{
 		change_detection = {
