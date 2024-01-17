@@ -32,7 +32,12 @@ alias mv='mv -iv'
 # clipboard
 alias cb='xclip -sel clip'
 
-
+cbh () {
+  local h_num=1
+  [ -z $1 ] || h_num=$1  
+  echo "Copied to clibpoard" >&2
+  fc -ln -$h_num | head -n 1 | tee /dev/stderr | cb
+}
 # fonts
 alias fonts='fc-cache -f -v'
 
@@ -47,7 +52,7 @@ alias svim="sudo -E \$EDITOR"
 alias work="$HOME/workspace"
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
-alias dot="$HOME/.dotfiles"
+alias dotf="$HOME/.dotfiles"
 
 
 # # If you use Ctrl+A it expands aliases - currently overlaps with my tmux prefix
