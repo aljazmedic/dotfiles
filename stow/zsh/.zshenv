@@ -3,7 +3,6 @@
 # This is sourced for all zsh login, interactive shells and scripts.
 # Tmux pane splitting doesn't source this file, so anything pane-related
 #   needs to be specified in .zprofile
-
 export DOTFILES="${DOTFILES:=$HOME/.dotfiles}"
 export WORKSPACE="$HOME/workspace"
 
@@ -16,7 +15,7 @@ export XDG_DATA_HOME="${XDG_DATA_HOME:=$XDG_CONFIG_HOME/local/share}"
 # Use nvim if availble, else vim
 if command -v nvim &> /dev/null; then
     export EDITOR="nvim"
-    export PAGER="nvim +Man!"
+    # export PAGER="nvim +Man!"
 else
     export EDITOR="vim"
     export PAGER="less"
@@ -37,6 +36,7 @@ export SAVEHIST=10000
 # OMZ vars
 export ZSH="$ZDOTDIR/oh-my-zsh" 
 export ZSH_CUSTOM="$ZDOTDIR"
+export ZSHZ_DATA="$XDG_DATA_HOME/zshz"
 
 # Other
 export TMUXP_CONFIGDIR="$XDG_CONFIG_HOME/tmuxp"

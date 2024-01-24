@@ -39,3 +39,4 @@ _source_if_exists_f $ZDOTDIR/.p10k.zsh
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
