@@ -18,3 +18,7 @@
 	path = ~/.config/git/local
 [commit]
 	gpgsign = true
+[rerere]
+	enabled = true
+[gpg]
+	format = ssh
