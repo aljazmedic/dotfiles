@@ -32,7 +32,9 @@ return {
 				["<C-j>"] = cmp.mapping.select_next_item(),
 				-- Add scrolling docs
 				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-c>"] = cmp.mapping.abort(),
+        -- Must not be C-c, because then we need two clicks to exit insert mode,
+        -- when completions are available
+				["<ESC>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({

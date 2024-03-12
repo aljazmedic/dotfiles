@@ -11,12 +11,13 @@ return {
         null_ls.builtins.formatting.prettierd,
         -- Python
         null_ls.builtins.formatting.black,
-        null_ls.builtins.diagnostics.flake8,
+        -- OCaml
+        null_ls.builtins.formatting.ocamlformat,
       },
     })
     local keymap = vim.keymap
     keymap.set("n", "<leader>F", function()
       vim.lsp.buf.format({ async = true })
-    end, {})
+    end, { desc = "Format buffer" })
   end,
 }

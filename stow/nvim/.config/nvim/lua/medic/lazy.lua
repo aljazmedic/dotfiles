@@ -11,38 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = {
-			ensure_installed = {
-				"bash",
-				"html",
-				"javascript",
-				"json",
-				"lua",
-				"markdown",
-				"markdown_inline",
-				"python",
-				"query",
-				"regex",
-				"tsx",
-				"typescript",
-				"vim",
-				"yaml",
-			},
-		},
-	},
-	'nvim-treesitter/playground',
-}
-
 require("lazy").setup({
-		{ import = "medic.plugins" },
-		{ import = "medic.plugins.lsp" },
+	{ import = "medic.plugins" },
+	{ import = "medic.plugins.lsp" },
+	{ import = "medic.plugins.markdown" },
+}, {
+	change_detection = {
+		notify = false, -- annoying notifications
 	},
-	{
-		change_detection = {
-			notify = false, -- annoying notifications
-		}
-	}
-)
+})
