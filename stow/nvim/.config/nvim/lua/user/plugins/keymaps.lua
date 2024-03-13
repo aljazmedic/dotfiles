@@ -8,10 +8,8 @@ return {
 		local wk = require("which-key")
 		-- Normal Mode
 		wk.register({
-			["<leader>"] = {
-				l = { "<cmd>Lazy<CR>", "Lazy window" },
-				S = { "<cmd>w! !sudo tee % > /dev/null<CR><CR>", "Sudo save" },
-			},
+      ["<leader>l"] ={ "<cmd>Lazy<CR>", "Lazy window" },
+			["<leader>S"] = { "<cmd>w! !sudo tee % > /dev/null<CR><CR>", "Sudo save" },
 			t = {
 				name = "Tabs",
 				o = { "<cmd>tabnew<CR>", "New tab" },

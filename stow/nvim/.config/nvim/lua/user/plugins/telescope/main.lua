@@ -11,12 +11,14 @@ return {
 		},
 		{ "nvim-lua/plenary.nvim" },
 		{ "folke/which-key.nvim" },
+    { "folke/trouble.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	config = function()
 		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
+    local trouble = require("trouble.providers.telescope")
 		telescope.setup({
 			defaults = {
 				layout_strategy = "horizontal",
@@ -28,7 +30,11 @@ return {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-t>"] = trouble.open_with_trouble,
 					},
+          n = {
+            ["<C-t>"] = trouble.open_with_trouble,
+          },
 				},
 			},
 			extensions = {

@@ -12,11 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "medic.plugins" },
-	{ import = "medic.plugins.lsp" },
-	{ import = "medic.plugins.markdown" },
+	{ import = "user.plugins" },
+	{ import = "user.plugins.lsp" },
+	{ import = "user.plugins.telescope" },
+	{ import = "user.plugins.git" },
+	{ import = "user.plugins.markdown" },
 }, {
+	ui = {
+		border = "rounded",
+	},
 	change_detection = {
+		enable = true,
 		notify = false, -- annoying notifications
 	},
 })
