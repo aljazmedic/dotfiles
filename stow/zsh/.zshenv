@@ -33,6 +33,8 @@ export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 export HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 export HISTSIZE=50000
 export SAVEHIST=10000
+export HIST_STAMPS="yyyy-mm-dd"
+
 # OMZ vars
 export ZSH="$ZDOTDIR/oh-my-zsh" 
 export ZSH_CUSTOM="$ZDOTDIR"

@@ -73,6 +73,15 @@ done
 unset _etc_files _file
 
 
+# Docker plugin
+
+(( ${+commands[docker-compose]} )) && dccmd='docker-compose' || dccmd='docker compose'
+
+alias dcc="$dccmd config"
+alias dccj="$dccmd config --format=json | jq"
+alias dccs="$dccmd config --services"
+unset dccmd
+
 
 ### FUNCTIONS ###
 
