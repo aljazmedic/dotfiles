@@ -22,3 +22,6 @@
 	enabled = true
 [gpg]
 	format = ssh
+[maintenance]
+	auto = true
+	strategy = incremental
