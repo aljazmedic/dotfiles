@@ -1,4 +1,4 @@
-return {
+T = {
 	-- change some telescope options and a keymap to browse plugin files
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
@@ -11,18 +11,30 @@ return {
 		},
 		{ "nvim-lua/plenary.nvim" },
 		{ "folke/which-key.nvim" },
-    { "folke/trouble.nvim" },
+		{ "folke/trouble.nvim" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 	},
 	config = function()
 		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
-    local trouble = require("trouble.providers.telescope")
+		local trouble = require("trouble.providers.telescope")
 		telescope.setup({
+			pickers = {
+				find_files = {
+					-- show hidden files
+					hidden = true,
+				},
+				live_grep = {
+					theme = "dropdown",
+				},
+			},
 			defaults = {
+				hidden = true,
 				layout_strategy = "horizontal",
-				layout_config = { prompt_position = "top" },
+				layout_config = {
+					prompt_position = "top",
+				},
 				sorting_strategy = "ascending",
 				winblend = 0,
 				mappings = {
@@ -30,17 +42,16 @@ return {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<C-t>"] = trouble.open_with_trouble,
+						["<C-t>"] = trouble.open_with_trouble,
+						["<C-v>"] = actions.file_vsplit,
 					},
-          n = {
-            ["<C-t>"] = trouble.open_with_trouble,
-          },
+					n = {
+						["<C-t>"] = trouble.open_with_trouble,
+					},
 				},
 			},
 			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown({}),
-				},
+				["ui-select"] = { require("telescope.themes").get_dropdown({}) },
 			},
 		})
 		telescope.load_extension("ui-select")
@@ -51,7 +62,7 @@ return {
 					name = "Find",
 					f = { builtin.find_files, "Find file" },
 					s = { builtin.live_grep, "Find string" },
-					c = { builtin.rep_string, "Find current string under the cursor" },
+					c = { builtin.grep_string, "Find current string under the cursor" },
 					b = { builtin.buffers, "Find buffer" },
 					g = {
 						name = "Git",
@@ -59,10 +70,7 @@ return {
 						c = {
 							function()
 								builtin.git_commits({
-									git_command = {
-										"git",
-										"hist",
-									},
+									git_command = { "git", "hist" },
 								})
 							end,
 							"Git commits",
@@ -77,3 +85,4 @@ return {
 		})
 	end,
 }
+return {}

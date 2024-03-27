@@ -18,7 +18,6 @@ return {
 				p = { "<cmd>tabp<CR>", "Prev tab" },
 			},
 			J = { "mzJ`z", "Weird Primagen stuff" },
-
 			-- Recenter remaps
 			["<C-d>"] = { "<C-d>zz", "Down/Up" },
 			["<C-u>"] = { "<C-u>zz", "Down/Up" },

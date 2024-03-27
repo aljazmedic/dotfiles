@@ -5,10 +5,9 @@ return {
 		"hrsh7th/cmp-buffer", -- source from current buffer
 		"hrsh7th/cmp-path", -- filepath
 		"hrsh7th/cmp-nvim-lsp", -- lsp client
-		"onsails/lspkind.nvim",
-		"L3MON4D3/LuaSnip", -- Engine for snippets
+		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip", -- nvim-cmp snippets
-		"rafamadriz/friendly-snippets", -- Collection of snippets
+    "onsails/lspkind.nvim", -- VS Code like pictograms in dropdown
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -32,13 +31,13 @@ return {
 				["<C-j>"] = cmp.mapping.select_next_item(),
 				-- Add scrolling docs
 				["<C-Space>"] = cmp.mapping.complete(),
-        -- Must not be C-c, because then we need two clicks to exit insert mode,
-        -- when completions are available
+				-- Must not be C-c, because then we need two clicks to exit insert mode,
+				-- when completions are available
 				["<ESC>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({
-				-- { name = "nvim_lsp" },
+				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },

@@ -3,6 +3,11 @@ local M = {
   event = "VeryLazy",
 }
 
+M.dependencies= {
+  "nvim-lua/plenary.nvim",
+  "folke/which-key.nvim",
+}
+
 function M.config()
   local icons = require "user.icons"
   local wk = require "which-key"
