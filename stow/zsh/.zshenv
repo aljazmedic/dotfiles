@@ -28,22 +28,34 @@ else
     export VISUAL="$EDITOR"
 fi
 
-# Zsh
+### BEGIN zsh
 export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 export HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 export HISTSIZE=50000
 export SAVEHIST=10000
-export HIST_STAMPS="yyyy-mm-dd"
 
-# OMZ vars
 export ZSH="$ZDOTDIR/oh-my-zsh" 
 export ZSH_CUSTOM="$ZDOTDIR"
 export ZSHZ_DATA="$XDG_DATA_HOME/zshz"
+### END zsh
 
 # Other
 export TMUXP_CONFIGDIR="$XDG_CONFIG_HOME/tmuxp"
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
+
+### BEGIN nvm
 export NVM_DIR="$XDG_DATA_HOME/nvm"
+### END nvm
+
+### BEGIN direnv
+export DIRENV_LOG_FORMAT=""
+### END direnv
+
+### BEGIN tmux
+export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
+export ZSH_TMUX_UNICODE="true"
+### END tmux
+
 
 
 # golang

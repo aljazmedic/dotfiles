@@ -22,19 +22,30 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-		zsh-completions	
-		zsh-autosuggestions
-		zsh-syntax-highlighting
-		colored-man-pages
-	)
+    direnv
+	
+	git
 
-# rc files may add to plugins
-rcdir="$HOME/.config/zsh/rc.d"
-[ -d "$rcdir" ] && for rc in "$rcdir"/*.zsh; do
-	source "$rc"
-	# echo "Loaded $rc"
-done
-unset rcdir rc
+	docker
+	docker-compose
+	
+	fd
+	fzf
+	zoxide
+	
+	tmux
+	tmuxinator
+	
+	zsh-completions
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+
+	rbenv
+	
+	common-aliases
+	# colored-man-pages # We use bat instead
+)
+
 plugins=($(printf "%s\n" "${plugins[@]}" | sort -u | uniq))
 
 source $ZSH/oh-my-zsh.sh
@@ -46,5 +57,3 @@ source $ZDOTDIR/plugins/configs.zsh
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-eval "$(zoxide init zsh)"
