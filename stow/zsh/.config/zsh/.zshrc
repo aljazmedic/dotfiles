@@ -21,6 +21,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 HIST_STAMPS="yyyy-mm-dd"
 
+export DIRENV_LOG_FORMAT=""
 plugins=(
     direnv
 	

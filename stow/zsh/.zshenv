@@ -44,7 +44,7 @@ export TMUXP_CONFIGDIR="$XDG_CONFIG_HOME/tmuxp"
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 
 ### BEGIN nvm
-export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 ### END nvm
 
 ### BEGIN direnv
@@ -57,9 +57,17 @@ export ZSH_TMUX_UNICODE="true"
 ### END tmux
 
 
+### BEGIN fzf
+## When ready, uncomment the following line to disable fzf key bindings and write own.
+## By default, fzf key bindings are enabled: CTRL-T, CTRL-R, ALT-C
+# DISABLE_FZF_KEY_BINDINGS="true"
+### END fzf
 
 # golang
 export GOPATH="$WORKSPACE/go"
 export GOBIN="$WORKSPACE/go/bin"
 export GOCACHE="$XDG_CACHE_HOME/go-build"
 
+export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"

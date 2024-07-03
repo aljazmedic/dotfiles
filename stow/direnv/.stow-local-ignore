@@ -1,0 +1,8 @@
+# Gitfiles
+.git
+.gitignore
+
+# Makefiles
+install.mk
+
+README.md
