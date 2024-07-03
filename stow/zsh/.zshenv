@@ -68,6 +68,10 @@ export GOPATH="$WORKSPACE/go"
 export GOBIN="$WORKSPACE/go/bin"
 export GOCACHE="$XDG_CACHE_HOME/go-build"
 
-export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+# if we have ruby and rbenv command:
+if command -v ruby &> /dev/null && command -v rbenv &> /dev/null; then
+  export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
+  export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+  export PATH="$PATH:$GEM_HOME/bin"
+  eval "$(rbenv init -)"
+fi
