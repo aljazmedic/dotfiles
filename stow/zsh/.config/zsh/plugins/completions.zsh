@@ -50,7 +50,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)ZLS_COLORS}
 
 # File sorting
 zstyle ':completion:*' file-list all # file complete like ls -la
-zstyle ':completion:*' file-sort modification
+# zstyle ':completion:*' file-sort modification
 # list files in alphabetical order if you set 'dummyvalue'
 # also possible: size, links, modificatoin/date/time, access, change
 

@@ -54,6 +54,10 @@ alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
 alias dotf="$HOME/.dotfiles"
 
+alias bat=batcat
+alias -g B='| bat'
+alias -g BB='2>&1 | bat'
+
 
 # # If you use Ctrl+A it expands aliases - currently overlaps with my tmux prefix
 # zle -C alias-expension complete-word _generic
@@ -81,6 +85,7 @@ alias dcc="$dccmd config"
 alias dccj="$dccmd config --format=json | jq"
 alias dccs="$dccmd config --services"
 unset dccmd
+alias docker_container_ip="docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 
 ### FUNCTIONS ###

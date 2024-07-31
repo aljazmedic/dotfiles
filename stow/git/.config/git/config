@@ -5,7 +5,6 @@
 [user]
 	email = 35614267+aljazmedic@users.noreply.github.com	
 	name = Aljaž Medič
-	signingkey = CBF2F4AC94268E9B
 [alias]
 	hist = log --pretty=format:'%C(yellow)%h%Creset%C(auto)%d  - %s %Cblue[%an] %C(auto)%cd%Creset' \
 		--graph \
@@ -14,14 +13,13 @@
 [log]
 	#date = format:%Y-%m-%d %H:%M:%S
 	date = iso
-[include]
-	path = ~/.config/git/local
-[commit]
-	gpgsign = true
+  abbrevCommit = true
+[format]
+  pretty = oneline
 [rerere]
 	enabled = true
-[gpg]
-	format = ssh
 [maintenance]
 	auto = true
 	strategy = incremental
+[include]
+	path = ~/.config/git/local

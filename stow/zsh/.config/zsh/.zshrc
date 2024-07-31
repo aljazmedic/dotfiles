@@ -23,14 +23,13 @@ HIST_STAMPS="yyyy-mm-dd"
 
 export DIRENV_LOG_FORMAT=""
 plugins=(
-    direnv
+  direnv
 	
 	git
 
 	docker
 	docker-compose
 	
-	fd
 	fzf
 	zoxide
 	
@@ -42,6 +41,7 @@ plugins=(
 	zsh-syntax-highlighting
 
 	rbenv
+  nvm
 	
 	common-aliases
 	# colored-man-pages # We use bat instead
