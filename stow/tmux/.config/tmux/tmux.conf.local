@@ -145,23 +145,24 @@ tmux_conf_theme_pane_indicator="$thm_blue"
 tmux_conf_theme_pane_active_indicator="$thm_orange"
 
 # status line style
+# # When notification appear
 tmux_conf_theme_message_fg="$thm_cyan"
 tmux_conf_theme_message_bg="$thm_gray"
 tmux_conf_theme_message_attr="bold"
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg="$thm_cyan"
-tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_3"
+tmux_conf_theme_message_command_bg="$thm_bg" #tmux_conf_theme_colour_3
 tmux_conf_theme_message_command_attr="bold"
 
-# window modes style
+# window modes style - <prefix> : w
 tmux_conf_theme_mode_fg="$thm_black"
-tmux_conf_theme_mode_bg="$thm_yellow"
+tmux_conf_theme_mode_bg="$thm_pink"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style
-tmux_conf_theme_status_fg="$thm_pink"
-tmux_conf_theme_status_bg="$thm_bg"
+tmux_conf_theme_status_fg="$thm_fg"
+tmux_conf_theme_status_bg="default"
 tmux_conf_theme_status_attr="none"
 
 # terminal title
@@ -174,7 +175,7 @@ tmux_conf_theme_status_attr="none"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
+tmux_conf_theme_terminal_title="#S-#I ● #W"
 
 # window status style
 #   - built-in variables are:
@@ -189,7 +190,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 tmux_conf_theme_window_status_fg="$thm_blue"
 tmux_conf_theme_window_status_bg="$thm_bg"
 tmux_conf_theme_window_status_attr="none"
-tmux_conf_theme_window_status_format="#I #W#{?#{hostname_ssh}, @#{hostname_ssh},}#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
+tmux_conf_theme_window_status_format="#I #W#{?#{hostname_ssh}, @#{hostname_ssh},}#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}#{?window_last_flag, ↺,}"
 #tmux_conf_theme_window_status_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
@@ -216,9 +217,9 @@ tmux_conf_theme_window_status_last_bg="$thm_bg"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
-tmux_conf_theme_left_separator_main=""
+tmux_conf_theme_left_separator_main="" #keep empty b/c of the session_coloring 
 tmux_conf_theme_left_separator_sub="|"
-tmux_conf_theme_right_separator_main=" █"
+tmux_conf_theme_right_separator_main=""
 tmux_conf_theme_right_separator_sub="|"
 #tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
 #tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
@@ -252,13 +253,13 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left="#{?client_prefix, #S ,}|#{?client_prefix,, #S }| ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right="#{prefix}#{mouse}#{pairing}#{synchronized}||#{username}#{root}@#{hostname} "
+tmux_conf_theme_status_left="#{?client_prefix, #S ,}|#{?client_prefix,, #S }| ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,}#{pomodoro_status} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} |  | #{username}#{root}@#{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$thm_bg,$thm_bg,$thm_fg"
-tmux_conf_theme_status_left_bg="$thm_red,$thm_green,$thm_bg,$thm_blue"
-tmux_conf_theme_status_left_attr="bold,none,none"
+tmux_conf_theme_status_left_bg="$thm_red,$thm_green,$thm_bg"
+tmux_conf_theme_status_left_attr="bold,bold,none,none"
 
 # status right style
 tmux_conf_theme_status_right_fg="$thm_fg,$thm_bg,$thm_fg"
@@ -266,7 +267,7 @@ tmux_conf_theme_status_right_bg="$thm_black4,$thm_orange,$thm_gray"
 tmux_conf_theme_status_right_attr="none,none,bold"
 
 # pairing indicator
-tmux_conf_theme_pairing="⚇"                 # U+2687
+tmux_conf_theme_pairing="⚇"                 # U+2688
 tmux_conf_theme_pairing_fg="none"
 tmux_conf_theme_pairing_bg="none"
 tmux_conf_theme_pairing_attr="none"
@@ -285,7 +286,7 @@ tmux_conf_theme_mouse_attr="none"
 
 # root indicator
 tmux_conf_theme_root="!"
-tmux_conf_theme_root_fg="none"
+tmux_conf_theme_root_fg="$thm_red"
 tmux_conf_theme_root_bg="none"
 tmux_conf_theme_root_attr="bold,blink"
 
@@ -383,6 +384,8 @@ set -g mode-keys vi
 # move status line to top
 set -g status-position top
 
+bind -n C-Tab select-window -p
+bind -n C-BTab select-window -n
 
 # -- tpm -----------------------------------------------------------------------
 
@@ -396,7 +399,7 @@ set -g status-position top
 # by default, launching tmux will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_launch=true
+tmux_conf_update_plugins_on_launch=false
 
 # by default, reloading the configuration will update tpm and all plugins
 #   - true (default)
@@ -407,7 +410,7 @@ tmux_conf_update_plugins_on_reload=true
 # plugins are enabled
 #   - true (default)
 #   - false
-tmux_conf_uninstall_plugins_on_reload=true
+tmux_conf_uninstall_plugins_on_reload=false
 
 # /!\ the tpm bindings differ slightly from upstream:
 #   - installing plugins: <prefix> + I
@@ -426,8 +429,23 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-open'
 # set -g @plugin 'Morantron/tmux-fingers' # TODO! Great potential
-# set -g @plugin 'olimorris/tmux-pomodoro-plus'
+set -g @plugin 'olimorris/tmux-pomodoro-plus'
+set -g @pomodoro_on " #[fg=$thm_red] "
+set -g @pomodoro_complete " #[fg=$text_green] "
+set -g @pomodoro_pause " #[fg=$thm_fg] "
+set -g @pomodoro_menu_position "L"             # The location of the menu relative to the screen
+set -g @pomodoro_repeat 'off'
+set -g @pomodoro_notifications 'on'
+set -g @pomodoro_sound 'Pop'
 
+# Unset e binding
+set -g @pomodoro_restart E
+set -g @pomodoro_skip y
+set -g @pomodoro_mins 25                       # The duration of the Pomodoro
+set -g @pomodoro_break_mins 5                  # The duration of the break after the Pomodoro completes
+set -g @pomodoro_intervals 4                   # The number of intervals before a longer break is started
+set -g @pomodoro_long_break_mins 25            # The duration of the long break
+set -g @pomodoro_disable_breaks 'on'          # Turn off breaks
 
 # Configure tmux-open
 set -g @open-S 'https://www.google.com/search?q='
