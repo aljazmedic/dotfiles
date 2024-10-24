@@ -46,7 +46,7 @@ function M.config()
 
             ignore_focus = {"NvimTree", "netrw"}
         },
-        theme = "dracula",
+        theme = "catppuccin",
         sections = {
             lualine_a = {"mode"},
             lualine_b = {'branch', 'diff', diagnostics},
